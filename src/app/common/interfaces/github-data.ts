@@ -3,7 +3,8 @@ export interface GitHubUser {
     avatar_url: string,
     name: string
     public_repos: number,
-    followers: number
+    followers: number,
+    repoList?: GitHubRepo[]
 }
 
 export interface GitHubRepo {

@@ -15,7 +15,6 @@ export class DetailPageComponent extends Query<SessionState> implements OnInit {
 
   user: GitHubUser;
   userObs: Observable<GitHubUser>
-  repoList: GitHubRepo[];
 
   constructor(
     protected store: SessionStore,
@@ -27,7 +26,7 @@ export class DetailPageComponent extends Query<SessionState> implements OnInit {
 
   ngOnInit(): void {
     this.searchSrv.getUserRepos(this.user.login).subscribe(data => {
-      this.repoList = data;
+      this.user.repoList = data;
     });
   }
 

@@ -1,11 +1,6 @@
-<div flex fxLayout="column" fxLayoutAlign="space-around center" fxLayoutGap="15px">
-  <mat-toolbar color="primary">
-    <button mat-icon-button *ngIf="!enableBackButton()" routerLink="/search">
-      <mat-icon>home</mat-icon>
-    </button>
-    <span>GitHub User Search</span>
-  </mat-toolbar>
+<app-toolbar></app-toolbar>
 
+<div class="mt-20" flex fxLayout="column" fxLayoutAlign="space-around center" fxLayoutGap="15px">
   <div class="content-block">
     <router-outlet #routerOutlet="outlet"></router-outlet>
   </div>
