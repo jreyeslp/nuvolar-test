@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.center-container {
+    text-align: center;
+}
+
+.content-block {
+    width: 95%;
+}
+
+.center-spinner {
+    margin: 0 auto;
+}
+
+.detail-card {
+    margin: 10px 0 10px 0;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}

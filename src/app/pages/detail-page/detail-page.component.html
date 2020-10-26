@@ -1,0 +1,27 @@
+<div *ngIf="user && user.repoList; else loadingBlock">
+    
+    <app-user-card
+        [user]="user"
+        [content]="true">
+    </app-user-card>
+
+    <mat-card class="detail-card" *ngIf="user.repoList.length > 0">
+        <mat-card-header>            
+            <mat-card-title>Repository list</mat-card-title>
+            <mat-card-subtitle><i>Displaying the first 20 results</i></mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-list role="list">
+                <mat-list-item role="listitem" *ngFor="let item of user.repoList.slice(0, 20)">
+                    <mat-icon mat-list-icon>folder</mat-icon>
+                    <div mat-line><strong>{{item.name}}</strong></div>
+                    <div mat-line>{{item.description}}</div>
+                </mat-list-item>
+            </mat-list>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<ng-template #loadingBlock>
+    <mat-spinner class="center-spinner" color="accent"></mat-spinner>   
+</ng-template>

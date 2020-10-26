@@ -1,27 +1,38 @@
-# NuvolarTest
+# Nuvolar Test - [![Netlify Status](https://api.netlify.com/api/v1/badges/b1ebb251-0950-427c-9eb7-b1954f029941/deploy-status)](https://app.netlify.com/sites/jrg-nuvolar-test/deploys)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+This app was created for an Angular Developer Technical Test
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- First of all, clone this repo locally
+- Use the terminal, I assume you have NodeJS, NPM and Angular-CLI installed.
 
-## Code scaffolding
+```bash
+npm install
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Usage
 
-## Build
+```bash
+ng serve -o
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Production Ready
 
-## Running unit tests
+This project comes with built-in PWA mode, so you can install it to your desktop or smartphone by accessing [this link](https://jrg-nuvolar-test.netlify.app/search).
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+In order to build the distribution, run
+```bash
+ng build --prod
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-## Further help
+Please make sure to update tests as appropriate.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## License
+Javier de los Reyes Guío - 2020
+
+[MIT](https://choosealicense.com/licenses/mit/)
