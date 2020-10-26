@@ -1,0 +1,21 @@
+<div class="center-container">
+    <mat-form-field>
+        <input (keyup)="onSearchChange($event)" matInput placeholder="Enter an username">
+    </mat-form-field>
+</div>
+
+<div *ngIf="user && !loading">
+    <mat-card *ngIf="user.login; else noResult" (click)="goDetail(user)">
+        <mat-card-header>
+            <img mat-card-avatar [src]="user.avatar_url" />
+            <mat-card-title>{{ user.name }}</mat-card-title>
+            <mat-card-subtitle>GitHub User: {{ user.login }}</mat-card-subtitle>
+        </mat-card-header>
+    </mat-card>
+
+    <ng-template #noResult>
+        <div>Sorry, we couldn't find a user</div>
+    </ng-template>
+</div>
+
+<mat-spinner *ngIf="loading" class="center-spinner" color="accent"></mat-spinner>

@@ -1,0 +1,35 @@
+<div *ngIf="repoList; else loadingBlock">
+    <mat-card class="detail-card">
+        <mat-card-header>
+            <img mat-card-avatar [src]="user.avatar_url" />
+            <mat-card-title>{{ user.name }}</mat-card-title>
+            <mat-card-subtitle>GitHub User: {{ user.login }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-list role="list">
+                <mat-list-item role="listitem">Followers: {{user.followers}}</mat-list-item>
+                <mat-list-item role="listitem">Repositories: {{repoList.length}}</mat-list-item>                
+            </mat-list>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="detail-card" *ngIf="repoList.length > 0">
+        <mat-card-header>            
+            <mat-card-title>Repository list</mat-card-title>
+            <mat-card-subtitle><i>Displaying the first 20 results</i></mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-list role="list">
+                <mat-list-item role="listitem" *ngFor="let item of repoList.slice(0, 20)">
+                    <mat-icon mat-list-icon>folder</mat-icon>
+                    <div mat-line><strong>{{item.name}}</strong></div>
+                    <div mat-line>{{item.description}}</div>
+                </mat-list-item>
+            </mat-list>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<ng-template #loadingBlock>
+    <mat-spinner class="center-spinner" color="accent"></mat-spinner>   
+</ng-template>
