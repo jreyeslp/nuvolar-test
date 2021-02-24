@@ -1,9 +1,9 @@
 export interface GitHubUser {
-    login: string,
-    avatar_url: string,
-    name: string
-    public_repos: number,
-    followers: number,
+    login?: string,
+    avatar_url?: string,
+    name?: string
+    public_repos?: number,
+    followers?: number,
     repoList?: GitHubRepo[]
 }
 

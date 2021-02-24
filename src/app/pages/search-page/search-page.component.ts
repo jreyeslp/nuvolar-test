@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
-import { tap } from 'rxjs/operators';
 import { GitHubUser } from 'src/app/common/interfaces/github-data';
 import { GithubSearchService } from '../../common/services/github-search.service';
 import { SessionService } from "../../common/state-manager/state.store";

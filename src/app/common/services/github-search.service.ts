@@ -48,11 +48,11 @@ export class GithubSearchService {
             ),
             map((response: GitHubUser) => {
                 return {
-                    login: response.login,
-                    avatar_url: response.avatar_url,
-                    name: response.name,
-                    public_repos: response.public_repos,
-                    followers: response.followers
+                    login: response?.login,
+                    avatar_url: response?.avatar_url,
+                    name: response?.name,
+                    public_repos: response?.public_repos,
+                    followers: response?.followers
                 }
             })
         );
