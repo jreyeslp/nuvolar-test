@@ -25,7 +25,7 @@ export class DetailPageComponent extends Query<SessionState> implements OnInit {
   }
 
   ngOnInit(): void {
-    this.searchSrv.getUserRepos(this.user.login).subscribe(data => {
+    this.searchSrv.getUserRepos(this.user?.login).subscribe(data => {
       this.user.repoList = data;
     });
   }

@@ -1,13 +1,13 @@
 <mat-card class="detail-card" (click)="emitCallback()">
     <mat-card-header>
-        <img mat-card-avatar [src]="user.avatar_url" />
-        <mat-card-title>{{ user.name }}</mat-card-title>
-        <mat-card-subtitle>GitHub User: {{ user.login }}</mat-card-subtitle>
+        <img mat-card-avatar [src]="user?.avatar_url" />
+        <mat-card-title>{{ user?.name }}</mat-card-title>
+        <mat-card-subtitle>GitHub User: {{ user?.login }}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content *ngIf="content">
         <mat-list role="list">
-            <mat-list-item role="listitem">Followers: {{user.followers}}</mat-list-item>
-            <mat-list-item role="listitem">Repositories: {{user.repoList.length}}</mat-list-item>                
+            <mat-list-item role="listitem">Followers: {{user?.followers}}</mat-list-item>
+            <mat-list-item role="listitem">Repositories: {{user?.repoList?.length}}</mat-list-item>                
         </mat-list>
     </mat-card-content>
 </mat-card>

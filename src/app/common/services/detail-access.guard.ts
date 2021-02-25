@@ -11,15 +11,15 @@ export class DetailAccessGuardGuard extends Query<SessionState> implements CanAc
   constructor(
     protected store: SessionStore,
     private router: Router) {
-    
-      super(store);
+
+    super(store);
   }
-  
+
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-      return this.getValue().user ? true : this.router.navigate(['/search']);
+    return this.getValue().user ? true : this.router.navigate(['/search']);
   }
-  
+
 }
