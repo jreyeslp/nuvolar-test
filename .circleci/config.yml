@@ -6,9 +6,8 @@ orbs:
 jobs:
   # The build job
   build:
-    working_directory: ~/project
     docker:
-      - image: "node:12.18.4"
+      - image: cimg/base:2020.01
     steps:
       - checkout
       - sonarcloud/scan
