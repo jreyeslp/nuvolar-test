@@ -16,7 +16,7 @@
 	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "npm run sonar-test && eslint -f json -o ./reports/report.json"
+			"pre-commit": "npm run sonar-test"
 		}
 	},
 	"private": true,
