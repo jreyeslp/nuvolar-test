@@ -1,23 +1,23 @@
 <testExecutions version="1">
-  <file path="src/app/pages/search-page/search-page.component.spec.ts">
-    <testCase name="SearchPageComponent should create" duration="158"/>
-  </file>
   <file path="src/app/common/services/github-search.service.spec.ts">
-    <testCase name="GithubSearchService should be created" duration="5"/>
-  </file>
-  <file path="src/app/pages/detail-page/detail-page.component.spec.ts">
-    <testCase name="DetailPageComponent should create" duration="183"/>
+    <testCase name="GithubSearchService should be created" duration="43"/>
   </file>
   <file path="src/app/app.component.spec.ts">
-    <testCase name="AppComponent should create the app" duration="34"/>
-  </file>
-  <file path="src/app/common/services/detail-access.guard.spec.ts">
-    <testCase name="DetailAccessGuardGuard should be created" duration="4"/>
+    <testCase name="AppComponent should create the app" duration="70"/>
   </file>
   <file path="src/app/common/components/toolbar/toolbar.component.spec.ts">
     <testCase name="ToolbarComponent should create" duration="27"/>
   </file>
+  <file path="src/app/pages/search-page/search-page.component.spec.ts">
+    <testCase name="SearchPageComponent should create" duration="36"/>
+  </file>
+  <file path="src/app/pages/detail-page/detail-page.component.spec.ts">
+    <testCase name="DetailPageComponent should create" duration="90"/>
+  </file>
   <file path="src/app/common/components/user-card/user-card.component.spec.ts">
-    <testCase name="UserCardComponent should create" duration="75"/>
+    <testCase name="UserCardComponent should create" duration="29"/>
+  </file>
+  <file path="src/app/common/services/detail-access.guard.spec.ts">
+    <testCase name="DetailAccessGuardGuard should be created" duration="4"/>
   </file>
 </testExecutions>
