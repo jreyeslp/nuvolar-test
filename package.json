@@ -12,7 +12,7 @@
 		"sonar": "sonar-scanner",
 		"sonar-test": "ng test --code-coverage --watch=false",
 		"pass-eslint": "eslint -f json -o ./reports/report.json .",
-		"lighthouse": "lighthouse"
+		"lighthouse": "lighthouse http://localhost:4200 --output json --output-path reports/lh-report.json --chrome-flags='--headless'"
 	},
 	"private": true,
 	"dependencies": {

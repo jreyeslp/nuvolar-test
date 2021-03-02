@@ -45,3 +45,5 @@ testem.log
 Thumbs.db
 
 /.scannerwork
+/coverage
+!/coverage/nuvolar-test/lcov.info
