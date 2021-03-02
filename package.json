@@ -11,7 +11,8 @@
 		"prod": "ng build --prod",
 		"sonar": "sonar-scanner",
 		"sonar-test": "ng test --code-coverage --watch=false",
-		"pass-eslint": "eslint -f json -o ./reports/report.json ."
+		"pass-eslint": "eslint -f json -o ./reports/report.json .",
+		"lighthouse": "lighthouse"
 	},
 	"private": true,
 	"dependencies": {
