@@ -28,6 +28,11 @@ module.exports = function (config) {
     autoWatch: true,
     browsers: ["Chrome"],
     singleRun: true,
+    customLaunchers: {
+      ChromeHeadlessCI: {
+        base: "ChromeHeadless",
+      },
+    },
     restartOnFileChange: true,
     sonarQubeUnitReporter: {
       sonarQubeVersion: "LATEST",
