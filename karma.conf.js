@@ -25,7 +25,7 @@ module.exports = function (config) {
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
-    autoWatch: true,
+    autoWatch: false,
     browsers: ["Chrome", "ChromeHeadlessCI"],
     singleRun: true,
     customLaunchers: {
@@ -41,7 +41,6 @@ module.exports = function (config) {
         ],
       },
     },
-    restartOnFileChange: true,
     sonarQubeUnitReporter: {
       sonarQubeVersion: "LATEST",
       outputFile: "reports/ut_report.xml",

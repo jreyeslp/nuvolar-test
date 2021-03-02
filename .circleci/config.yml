@@ -10,7 +10,7 @@ jobs:
     docker:
       - image: "node:12.18.4"
         environment:
-          CHROME_BIN: "/usr/bin/chromium/chrome"
+          CHROME_BIN: "/usr/lib/chromium/chrome"
     steps:
       - checkout
       - run:
