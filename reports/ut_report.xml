@@ -1,23 +1,23 @@
 <testExecutions version="1">
-  <file path="src/app/pages/detail-page/detail-page.component.spec.ts">
-    <testCase name="DetailPageComponent should create" duration="161"/>
-  </file>
-  <file path="src/app/pages/search-page/search-page.component.spec.ts">
-    <testCase name="SearchPageComponent should create" duration="34"/>
-  </file>
   <file path="src/app/common/components/toolbar/toolbar.component.spec.ts">
-    <testCase name="ToolbarComponent should create" duration="20"/>
-  </file>
-  <file path="src/app/common/components/user-card/user-card.component.spec.ts">
-    <testCase name="UserCardComponent should create" duration="32"/>
-  </file>
-  <file path="src/app/common/services/detail-access.guard.spec.ts">
-    <testCase name="DetailAccessGuardGuard should be created" duration="3"/>
-  </file>
-  <file path="src/app/common/services/github-search.service.spec.ts">
-    <testCase name="GithubSearchService should be created" duration="1"/>
+    <testCase name="ToolbarComponent should create" duration="113"/>
   </file>
   <file path="src/app/app.component.spec.ts">
-    <testCase name="AppComponent should create the app" duration="6"/>
+    <testCase name="AppComponent should create the app" duration="21"/>
+  </file>
+  <file path="src/app/common/components/user-card/user-card.component.spec.ts">
+    <testCase name="UserCardComponent should create" duration="31"/>
+  </file>
+  <file path="src/app/pages/detail-page/detail-page.component.spec.ts">
+    <testCase name="DetailPageComponent should create" duration="91"/>
+  </file>
+  <file path="src/app/common/services/github-search.service.spec.ts">
+    <testCase name="GithubSearchService should be created" duration="4"/>
+  </file>
+  <file path="src/app/pages/search-page/search-page.component.spec.ts">
+    <testCase name="SearchPageComponent should create" duration="17"/>
+  </file>
+  <file path="src/app/common/services/detail-access.guard.spec.ts">
+    <testCase name="DetailAccessGuardGuard should be created" duration="2"/>
   </file>
 </testExecutions>
