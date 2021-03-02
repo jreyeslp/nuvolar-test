@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">40% </span>
+                <span class="strong">35.29% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6/15</span>
+                <span class='fraction'>6/17</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">30% </span>
+                <span class="strong">25% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/10</span>
+                <span class='fraction'>3/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">35.71% </span>
+                <span class="strong">31.25% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/14</span>
+                <span class='fraction'>5/16</span>
             </div>
         
             
@@ -145,7 +145,19 @@
 <a name='L86'></a><a href='#L86'>86</a>
 <a name='L87'></a><a href='#L87'>87</a>
 <a name='L88'></a><a href='#L88'>88</a>
-<a name='L89'></a><a href='#L89'>89</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -185,6 +197,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -233,93 +255,104 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { GitHubRepo, GitHubUser } from '../interfaces/github-data';
 import { Observable, of } from "rxjs";
 import { catchError, debounceTime, map, switchMap } from "rxjs/operators";
-import { GitHubRepo, GitHubUser } from '../interfaces/github-data';
+&nbsp;
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from '@angular/core';
 &nbsp;
 @Injectable()
 export class GithubSearchService {
 &nbsp;
-    apiUrl = 'https://api.github.com';
+	apiUrl = 'https://api.github.com';
 &nbsp;
-    /**
-     * Creates an instance of GithubSearchService.
-     * @param {HttpClient} http
-     * @memberof GithubSearchService
-     */
-    constructor(
-        private http: HttpClient
-    ) { }
+	/**
+	 * Creates an instance of GithubSearchService.
+	 * @param {HttpClient} http
+	 * @memberof GithubSearchService
+	 */
+	constructor(
+		private http: HttpClient
+	) { }
 &nbsp;
-    /**
-     * Function called whenever the user fills the search input
-     * It includes some operators to prevent the app from http-request-flooding the API server
-     *
-     * @param {Observable&lt;string&gt;} value
-     * @return {Observable&lt;GitHubUser&gt;} 
-     * @memberof GithubSearchService
-     */
-    search(value: Observable&lt;string&gt;): Observable&lt;GitHubUser&gt; {
-        return value.pipe(
-            debounceTime(400),
-            switchMap(<span class="fstat-no" title="function not covered" >value </span>=&gt; <span class="cstat-no" title="statement not covered" >this.getUserInfo(value))</span>
-        );
-    }
+	/**
+	 * Function called whenever the user fills the search input
+	 * It includes some operators to prevent the app from http-request-flooding the API server
+	 *
+	 * @param {Observable&lt;string&gt;} value
+	 * @return {Observable&lt;GitHubUser&gt;} 
+	 * @memberof GithubSearchService
+	 */
+	search(value: Observable&lt;string&gt;): Observable&lt;GitHubUser&gt; {
+		return value.pipe(
+			debounceTime(400),
+			switchMap(<span class="fstat-no" title="function not covered" >value </span>=&gt; <span class="cstat-no" title="statement not covered" >this.getUserInfo(value))</span>
+		);
+	}
+&nbsp;
+	/**
+	 * Duplicate code to proc Sonar analysis
+	 * @param value 
+	 */
+<span class="fstat-no" title="function not covered" >	searchCopy(</span>value: Observable&lt;string&gt;): Observable&lt;GitHubUser&gt; {
+<span class="cstat-no" title="statement not covered" >		return value.pipe(</span>
+			debounceTime(400),
+			switchMap(<span class="fstat-no" title="function not covered" >value </span>=&gt; <span class="cstat-no" title="statement not covered" >this.getUserInfo(value))</span>
+		);
+	}
+&nbsp;
+	/**
+	 * Gets GitHub user information
+	 *
+	 * @param {string} username
+	 * @return {Observable&lt;any&gt;} 
+	 * @memberof GithubSearchService
+	 */
+<span class="fstat-no" title="function not covered" >	getUserInfo(</span>username: string): Observable&lt;GitHubUser&gt; {
+<span class="cstat-no" title="statement not covered" >		return this.http.get(`${this.apiUrl}/users/${username}`).pipe(</span>
+			// Catching and managing error
+			catchError(<span class="fstat-no" title="function not covered" >err </span>=&gt; <span class="cstat-no" title="statement not covered" >of([])</span>
+			),
+			map(<span class="fstat-no" title="function not covered" >(r</span>esponse: GitHubUser) =&gt; {
+<span class="cstat-no" title="statement not covered" >				return {</span>
+					login: response?.login,
+					avatar_url: response?.avatar_url,
+					name: response?.name,
+					public_repos: response?.public_repos,
+					followers: response?.followers
+				}
+			})
+		);
+	}
 &nbsp;
 &nbsp;
-    /**
-     * Gets GitHub user information
-     *
-     * @param {string} username
-     * @return {Observable&lt;any&gt;} 
-     * @memberof GithubSearchService
-     */
-<span class="fstat-no" title="function not covered" >    getUserInfo(</span>username: string): Observable&lt;GitHubUser&gt; {
-<span class="cstat-no" title="statement not covered" >        return this.http.get(`${this.apiUrl}/users/${username}`).pipe(</span>
-            // Catching and managing error
-            catchError(<span class="fstat-no" title="function not covered" >err </span>=&gt; <span class="cstat-no" title="statement not covered" >of([])</span>
-            ),
-            map(<span class="fstat-no" title="function not covered" >(r</span>esponse: GitHubUser) =&gt; {
-<span class="cstat-no" title="statement not covered" >                return {</span>
-                    login: response?.login,
-                    avatar_url: response?.avatar_url,
-                    name: response?.name,
-                    public_repos: response?.public_repos,
-                    followers: response?.followers
-                }
-            })
-        );
-    }
-&nbsp;
-    
-    /**
-     * Gets GitHub repository info list for the user passed by parameter
-     *
-     * @param {string} username
-     * @return {*}  {Observable&lt;GitHubRepo&gt;}
-     * @memberof GithubSearchService
-     */
-    getUserRepos(username: string): Observable&lt;GitHubRepo[]&gt; {
-        return this.http.get(`${this.apiUrl}/users/${username}/repos`).pipe(
-            // Catching and managing error
-            catchError(<span class="fstat-no" title="function not covered" >err </span>=&gt; <span class="cstat-no" title="statement not covered" >of([])</span>
-            ),
-            map(<span class="fstat-no" title="function not covered" >(r</span>esponse: GitHubRepo[]) =&gt; {
-                const repoList = <span class="cstat-no" title="statement not covered" >[];</span>
-<span class="cstat-no" title="statement not covered" >                response.forEach(<span class="fstat-no" title="function not covered" >item </span>=&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                    repoList.push({</span>
-                        name: item.name,
-                        private: item.private,
-                        description: item.description,
-                        html_url: item.html_url
-                    })
-                })
-<span class="cstat-no" title="statement not covered" >                return repoList;</span>
-            })
-        );
-    }
+	/**
+	 * Gets GitHub repository info list for the user passed by parameter
+	 *
+	 * @param {string} username
+	 * @return {*}  {Observable&lt;GitHubRepo&gt;}
+	 * @memberof GithubSearchService
+	 */
+	getUserRepos(username: string): Observable&lt;GitHubRepo[]&gt; {
+		return this.http.get(`${this.apiUrl}/users/${username}/repos`).pipe(
+			// Catching and managing error
+			catchError(<span class="fstat-no" title="function not covered" >err </span>=&gt; <span class="cstat-no" title="statement not covered" >of([])</span>
+			),
+			map(<span class="fstat-no" title="function not covered" >(r</span>esponse: GitHubRepo[]) =&gt; {
+				const repoList = <span class="cstat-no" title="statement not covered" >[];</span>
+<span class="cstat-no" title="statement not covered" >				response.forEach(<span class="fstat-no" title="function not covered" >item </span>=&gt; {</span>
+<span class="cstat-no" title="statement not covered" >					repoList.push({</span>
+						name: item.name,
+						private: item.private,
+						description: item.description,
+						html_url: item.html_url
+					})
+				})
+<span class="cstat-no" title="statement not covered" >				return repoList;</span>
+			})
+		);
+	}
 &nbsp;
 }</pre></td></tr></table></pre>
 
@@ -328,7 +361,7 @@ export class GithubSearchService {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Mar 02 2021 17:50:06 GMT+0100 (hora estándar de Europa central)
+                at Tue Mar 02 2021 19:29:27 GMT+0100 (hora estándar de Europa central)
             </div>
         </div>
         <script src="../../../../prettify.js"></script>
