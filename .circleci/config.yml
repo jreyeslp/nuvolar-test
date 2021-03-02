@@ -25,7 +25,7 @@ jobs:
           command: npm install -g @angular/cli@latest
       - run:
           name: Run unit tests with karma
-          command: npm run test
+          command: ng test --browsers ChromeHeadlessCI
       - sonarcloud/scan
 
 workflows:
