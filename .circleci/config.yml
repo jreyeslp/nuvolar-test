@@ -9,8 +9,23 @@ jobs:
     working_directory: ~/project
     docker:
       - image: "node:12.18.4"
+        environment:
+          CHROME_BIN: "/usr/bin/google-chrome"
     steps:
       - checkout
+      - run:
+        name: Install node_modules with npm
+        command: npm install
+      - save_cache:
+        key: dependency-cache-{{ checksum "package.json" }}
+        paths:
+          - ./node_modules
+      - run:
+        name: Install angularcli
+        command: sudo npm install -g @angular/cli@latest
+      - run:
+        name: Run unit tests with karma
+        command: npm run sonar-test
       - sonarcloud/scan
 
 workflows:
