@@ -14,18 +14,18 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Install node_modules with npm
-        command: npm install
+          name: Install node_modules with npm
+          command: npm install
       - save_cache:
-        key: dependency-cache-{{ checksum "package.json" }}
-        paths:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
           - ./node_modules
       - run:
-        name: Install angularcli
-        command: sudo npm install -g @angular/cli@latest
+          name: Install angularcli
+          command: sudo npm install -g @angular/cli@latest
       - run:
-        name: Run unit tests with karma
-        command: npm run sonar-test
+          name: Run unit tests with karma
+          command: npm run sonar-test
       - sonarcloud/scan
 
 workflows:
