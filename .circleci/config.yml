@@ -42,8 +42,7 @@ jobs:
       # the current branch
       - run:
         name: Building
-        command: |
-          npm run build
+        command: npm run build
       - sonarcloud/scan
 
 workflows:
