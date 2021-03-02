@@ -13,16 +13,19 @@ jobs:
           CHROME_BIN: "/usr/lib/chromium/chrome"
     steps:
       - checkout
-      # - run:
-      #     name: Install node_modules with npm
-      #     command: npm install
-      # - save_cache:
-      #     key: dependency-cache-{{ checksum "package.json" }}
-      #     paths:
-      #       - ./node_modules
-      # - run:
-      #     name: Install angularcli
-      #     command: npm install -g @angular/cli@latest
+      - run:
+          name: Install node_modules with npm
+          command: npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: Install angularcli
+          command: npm install -g @angular/cli@latest
+      - run:
+          name: Run Sonar-Scanner
+          command: npm run sonar
       # - run:
       #     name: Run unit tests with karma
       #     command: ng test --browsers ChromeHeadlessCI
